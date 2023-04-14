@@ -1,5 +1,5 @@
 <?php
-
+        //classe será usada apenas se o login do sindico usar uma tabela do database
     class Sindico{
 
         private $login;

@@ -2,6 +2,7 @@
 
     class Morador{
 
+        private $id;
         private $nome;
         private $bloco;
         private $apartamento;
@@ -24,6 +25,18 @@
             $this->cpf = $cpf;
         }
 
+        public function getId()
+        {
+                return $this->id;
+        }
+
+        public function setId($id)
+        {
+                $this->id = $id;
+
+                return $this;
+        }
+        
         public function getNome()
         {
                 return $this->nome;

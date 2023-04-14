@@ -42,10 +42,10 @@
     <div>
         <br/><h1>Menu de funcionalidades</h1>
         <h3>Bem-vindo senhor(a) síndico(a)</h3>
-        <a href="cadastroMoradores.html"><button>Cadastrar novo morador</button></a><br/><br/>
-        <button>Editar/Deletar dados de morador</button><br/><br/>
-        <a href="multas.html"><button>Aplicar/Notificar multa</button></a><br/><br/>
-        <a href="telanotif.html"><button>Fazer notificações gerais</button></a>
+        <a href="cadastroMoradores.php"><button>Cadastrar novo morador</button></a><br/><br/>
+        <a href="multas.php"><button>Aplicar/Notificar multa</button></a><br/><br/>
+        <a href="telanotif.php"><button>Fazer notificações gerais</button></a><br/><br/>
+        <a href="trocalogin.php"><button>Alterar login e senha</button></a>
     </div>
 </body>
 </html>
