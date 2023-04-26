@@ -1,6 +1,7 @@
 <?php
     $action = "inserir";
     include_once '../DAO/moradorDAO.php';
+    include_once '../Model/moradorModel.php';
 
     $nome = "";
     $bloco = "";
@@ -12,7 +13,7 @@
     $cpf = "";
 
     if(isset($_REQUEST['editar'])){
-        $morador = MoradorDAO::buscarPorId($_GET['id']);
+        $morador = MoradorDAO::buscarPorId($_REQUEST['id']);
         $nome = $morador->getNome();
         $bloco = $morador->getBloco();
         $apartamento = $morador->getApartamento();
@@ -30,7 +31,7 @@
         <meta charset="UTF-8">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" >
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0, user-scalable = no">
-        <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="style-notif.css" type="text/css" media="screen" />
         <title>Cadastro de novos moradores</title>
     </head>
 
@@ -72,7 +73,7 @@
                         </div>
 
                         <div class='label-float'>
-                            <label for=usuario>Data de Aquisição do Apartamento:<br></label>
+                            <label for=usuario>Data de Aquisição do Apartamento: <br></label>
                             <input type='date' name='datadeaquisicao' id='txtDataAquisicao' placeholder="dia/mês/ano de aquisição do apartamento">
                         </div>
 
@@ -84,18 +85,19 @@
                         <div class='label-float'>
                             <label for=usuario>CPF: <br></label>
                             <input type='number' name='cpf' id='txtCpf' placeholder="número do Cadastro de pessoa física">
-                        </div>                
+                        </div><br/><br/>               
 
 
                         <div class="justify-center">
-                            <button type="submit">Cadastrar</button>
+                            <button onclick="window.history.back()">Voltar</button>
+                            <button>Cadastrar</button>
                         </div>
                     
                     </form>
 
                 </div>
                 
-            </div>
+            </div><br>
 
         <?php
 
@@ -103,7 +105,7 @@
 
         ?>
         <div class="container border">
-            <table class="table">
+            <table class="table table-dark table-striped">
                 <thead>
                     <tr>
                         <th>Nome</th>
@@ -129,9 +131,9 @@
                             echo '<td>'.$morador->getTelefone().'</td>';
                             echo '<td>'.$morador->getCpf().'</td>';
                             echo '<td><a href="cadastroMoradores.php?editar&id='.$morador->getId().'">
-                            <button class="btn btn-warning"> Editar <img src="icons/table_edit.png"> </button></a></td>';
+                            <button class="btn btn-warning" > Editar </button></a></td>';
                             echo '<td><a href="../Controller/moradorController.php?excluir&id='.$morador->getId().'">
-                            <button class="btn btn-danger"> Excluir <img src="icons/table_delete.png"> </button></a></td>';
+                            <button class="btn btn-danger"> Excluir </button></a></td>';
                             echo '</tr>';
                         }
                     ?>

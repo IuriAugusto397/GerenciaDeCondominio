@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="style-notif.css" type="text/css" media="screen" />
 
         <title>Login</title>
     </head>
