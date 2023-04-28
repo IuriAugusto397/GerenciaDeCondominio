@@ -6,7 +6,7 @@ include_once '../DAO/moradorDAO.php';
         
         $nome = $_POST['nome'];
         $bloco = $_POST['bloco'];
-        $apartamento = $_POST['apatamento'];
+        $apartamento = $_POST['apartamento'];
         $email = $_POST['email'];
         $datadenasc = $_POST['datadenascimento'];
         $datadeaqui = $_POST['datadeaquisicao'];
