@@ -7,6 +7,13 @@
     
     <title>Menu de funcionalidades</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400&family=Montserrat:wght@200;300&display=swap');
+        *{
+            margin:0;
+            padding:0;
+            font-family:'Inter', sans-serif;
+        }
+        
         .box{
             display:flex;
             justify-content: center;
@@ -24,6 +31,19 @@
         h1,h3{
             color: white;
             text-align: center;
+        }
+        .label-float button{
+            width: 98%;
+            padding:5px 5px;
+            display:inline-block;
+            
+        }
+        .label-float{
+            color:rgb(254, 254, 254);
+            position:relative;
+            padding-top: 13px;
+            margin-top: 5%;
+            margin-bottom:5%;
         }
         button{
             background-color: rgb(26, 147, 89);
@@ -65,7 +85,7 @@
 
             <div class="card">
                 <br/><h1>Menu de funcionalidades</h1>
-                <h3>Bem-vindo senhor(a) síndico(a)</h3>
+                <h3>Bem-vindo senhor(a) síndico(a)</h3><br><br>
                 <div class='label-float'>
                     <a href="cadastroMoradores.php"><button>Cadastrar novo morador</button></a><br/><br/><br/><br/>
                 </div>
@@ -76,8 +96,9 @@
                     <a href="telanotif.php"><button>Fazer notificações gerais</button></a><br/><br/><br/><br/>
                 </div>
                 <div class='label-float'>
-                    <a href="trocalogin.php"><button>Alterar login e senha</button></a><button class="absolute" id="logout">Logout</button>
+                    <a href="trocalogin.php"><button>Alterar login e senha</button></a>
                 </div>
+                <button class="absolute" id="logout">Logout</button>
             </div>
 
         </div>

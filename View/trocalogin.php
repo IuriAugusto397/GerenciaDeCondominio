@@ -31,7 +31,7 @@
                         <input nome='novasenha' type='password' id='novasenha' placeholder="insira a nova senha">
                     </div><br/><br/>
 
-                    <div class="justify-center">
+                    <br><br><div class="justify-center">
                         <button onclick="window.history.back()">Voltar</button>
                         <button name="salvar" type="submit">Salvar mudanças</button>
                     </div>

@@ -5,7 +5,7 @@
 
     $nome = "";
     $bloco = "";
-    $aparatamento = "";
+    $apartamento = "";
     $email = "";
     $datadenascimento = "";
     $datadeaquisicao = "";
@@ -31,8 +31,93 @@
         <meta charset="UTF-8">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" >
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0, user-scalable = no">
-        <link rel="stylesheet" href="style-notif.css" type="text/css" media="screen" />
+        
+
         <title>Cadastro de novos moradores</title>
+        <style> 
+            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400&family=Montserrat:wght@200;300&display=swap');
+
+            *{
+                margin:0;
+                padding:0;
+            font-family:'Inter', sans-serif;
+            }
+
+            body{
+                background-image:url(imagens/imagemcond.jpeg);
+                background-size:cover;
+                background-attachment: fixed;
+            }
+
+            .box{
+                display:flex;
+                justify-content: center;
+                width: 100%;
+                margin-top:100px;
+            }
+            .card{
+                background-color: #31322C;
+                padding: 50px 30px;
+                box-shadow: 4px 4px 1px 0px #00000060;
+                position: relative;
+                border: 6px solid #000000;
+                border-radius: 10px;
+            }
+            h1{
+                text-align: center;
+                margin-bottom:20px;
+                color:white;
+            }
+            .label-float input{
+                width: 98%;
+                padding:5px 5px;
+                display:inline-block;
+                border:0;
+                border-radius: 10px;
+                box-shadow: 0px 1px 0px 0px #ffffff;
+            }
+            .label-float{
+                color:rgb(254, 254, 254);
+                position:relative;
+                padding-top: 13px;
+                margin-top: 5%;
+                margin-bottom:5%;
+            }
+            .label-float textarea{
+                width: 98%;
+                padding:5px 5px;
+                display:inline-block;
+                border:0;
+                border-radius: 10px;
+                box-shadow: 0px 1px 0px 0px #ffffff;
+            }
+            .formbutton{
+                background-color: rgb(26, 147, 89);
+                padding:7px;
+                border-radius: 10px;
+                color:black;
+                font-weight: bold;
+                font-size: 16px;
+                position: absolute;
+                bottom: 80px;
+                border: 2px solid black;
+                transition: background-color 0.2s ease-in-out;
+                transition: border 0.2s ease-in-out;
+            }
+            .formbutton:first-child{
+                left: 30px;
+            }
+            .formbutton:last-child{
+                right: 30px;
+            }
+            .formbutton:hover{
+                background-color: rgb(0, 255, 115);
+                border: 2px solid rgb(193, 251, 193);
+                color:rgb(0, 0, 0);
+                cursor: pointer;
+            }
+
+        </style>
     </head>
 
     <body>
@@ -49,48 +134,48 @@
                         
                         <div class='label-float'>
                             <label for=usuario>Nome Completo: <br></label>
-                            <input type='text' name='nome' id='txtNome' placeholder="seu nome e sobrenome">
+                            <input type='text' value="<?php echo $nome?>" name='nome' id='txtNome' placeholder="seu nome e sobrenome">
                         </div>
 
                         <div class='label-float'>
                             <label for=usuario>Bloco: <br></label>
-                            <input type='text' name='bloco' id='txtBloco' placeholder="número do bloco/prédio que mora">
+                            <input type='text' value="<?php echo $bloco?>" name='bloco' id='txtBloco' placeholder="número do bloco/prédio que mora">
                         </div>
 
                         <div class='label-float'>
                             <label for=usuario>Apartamento: <br></label>
-                            <input type='text' name='apartamento' id='txtApartamento' placeholder="número do apartamento que mora">
+                            <input type='text' value="<?php echo $apartamento?>" name='apartamento' id='txtApartamento' placeholder="número do apartamento que mora">
                         </div>
 
                         <div class='label-float'>
                             <label for=usuario>Email: <br></label>
-                            <input type='email' name='email' id='txtEmail' placeholder="exemplo@email.com">
+                            <input type='email' value="<?php echo $email?>" name='email' id='txtEmail' placeholder="exemplo@email.com">
                         </div>
 
                         <div class='label-float'>
                             <label for=usuario>Data de Nascimento: <br></label>
-                            <input type='date' name='datadenascimento' id='txtDataNascimento' placeholder="dia/mês/ano de nascimento">
+                            <input type='date' value="<?php echo $datadenascimento?>" name='datadenascimento' id='txtDataNascimento' placeholder="dia/mês/ano de nascimento">
                         </div>
 
                         <div class='label-float'>
                             <label for=usuario>Data de Aquisição do Apartamento: <br></label>
-                            <input type='date' name='datadeaquisicao' id='txtDataAquisicao' placeholder="dia/mês/ano de aquisição do apartamento">
+                            <input type='date' value="<?php echo $datadeaquisicao?>" name='datadeaquisicao' id='txtDataAquisicao' placeholder="dia/mês/ano de aquisição do apartamento">
                         </div>
 
                         <div class='label-float'>
                             <label for=usuario>Telefone/Celular: <br></label>
-                            <input type='text' name='telefone' id='txtTelefone' placeholder="número de telefone fixo ou de celular">
+                            <input type='text' value="<?php echo $telefone?>" name='telefone' id='txtTelefone' placeholder="número de telefone fixo ou de celular">
                         </div>
 
                         <div class='label-float'>
                             <label for=usuario>CPF: <br></label>
-                            <input type='number' name='cpf' id='txtCpf' placeholder="número do Cadastro de pessoa física">
-                        </div><br/><br/>               
+                            <input type='number' value="<?php echo $cpf?>" name='cpf' id='txtCpf' placeholder="número do Cadastro de pessoa física">
+                        </div><br><br>            
 
 
                         <div class="justify-center">
-                            <button onclick="window.history.back()">Voltar</button>
-                            <button>Cadastrar</button>
+                            <br><br><button onclick="window.history.back()" class="formbutton">Voltar</button>
+                            <button class="formbutton">Cadastrar</button>
                         </div>
                     
                     </form>
