@@ -40,7 +40,7 @@ h1{
     box-shadow: 0px 1px 0px 0px #ffffff;
 }
 .label-float{
-    color:rgb(255, 255, 255);
+    color:rgb(254, 254, 254);
     position:relative;
     padding-top: 13px;
     margin-top: 5%;
@@ -54,18 +54,6 @@ h1{
     border-radius: 10px;
     box-shadow: 0px 1px 0px 0px #ffffff;
 }
-
-.category-select {
-    width: 98%;
-    padding: 5px;
-    display: inline-block;
-    border: 0;
-    border-radius: 10px;
-    box-shadow: 0px 1px 0px 0px #ffffff;
-    color: rgb(255, 255, 255);
-    background-color: rgba(255, 255, 255, 0.1);     
-}
-
 button{
     background-color: rgb(26, 147, 89);
     padding:7px;
@@ -85,7 +73,6 @@ button:first-child{
 button:last-child{
     right: 30px;
 }
-
 button:hover{
     background-color: rgb(0, 255, 115);
     border: 2px solid rgb(193, 251, 193);
@@ -103,4 +90,3 @@ hr{
     border-radius: 10px;
     border-top: 3px solid rgb(255, 255, 255);
 }
-

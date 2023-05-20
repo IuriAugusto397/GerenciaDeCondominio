@@ -18,14 +18,15 @@ include_once '../Model/moradorModel.php';
 
         public static function buscar(){
             $sql = "SELECT nome, bloco, apartamento, email, datadenascimento, datadeaquisicao, 
-            telefone, cpf FROM moradores ORDER BY nome";
+            telefone, cpf, id FROM moradores ORDER BY nome";
             $result = Conexao::consultar($sql);
             $lista = new ArrayObject();
             if($result != null){
                 while(list($_nome, $_bloco, $_apartamento, $_email, $_data_nasc, $_data_aqui, 
-                $_telefone, $_cpf)
+                $_telefone, $_cpf, $_id)
                  = mysqli_fetch_row($result)){
                     $morador = new Morador();
+                    $morador->setId($_id);
                     $morador->setNome($_nome);
                     $morador->setBloco($_bloco);
                     $morador->setApartamento($_apartamento);
@@ -65,7 +66,7 @@ include_once '../Model/moradorModel.php';
                     ."nome = '".$morador->getNome()."',"
                     ."bloco = '".$morador->getBloco()."',"
                     ."apartamento = '".$morador->getApartamento()."',"
-                    ."email = '".$morador->getEmail()."'"
+                    ."email = '".$morador->getEmail()."',"
                     ."datadenascimento = '".$morador->getData_nasc()."',"
                     ."datadeaquisicao = '".$morador->getData_aqui()."',"
                     ."telefone = '".$morador->getTelefone()."',"

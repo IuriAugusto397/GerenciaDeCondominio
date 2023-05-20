@@ -1,29 +1,29 @@
 <?php
-$action = "inserir";
-include_once '../DAO/moradorDAO.php';
-include_once '../Model/moradorModel.php';
+    $action = "inserir";
+    include_once '../DAO/moradorDAO.php';
+    include_once '../Model/moradorModel.php';
 
-$nome = "";
-$bloco = "";
-$apartamento = "";
-$email = "";
-$datadenascimento = "";
-$datadeaquisicao = "";
-$telefone = "";
-$cpf = "";
+    $nome = "";
+    $bloco = "";
+    $apartamento = "";
+    $email = "";
+    $datadenascimento = "";
+    $datadeaquisicao = "";
+    $telefone = "";
+    $cpf = "";
 
-if (isset($_REQUEST['editar'])) {
-    $morador = MoradorDAO::buscarPorId($_REQUEST['id']);
-    $nome = $morador->getNome();
-    $bloco = $morador->getBloco();
-    $apartamento = $morador->getApartamento();
-    $email = $morador->getEmail();
-    $datadenascimento = $morador->getData_nasc();
-    $datadeaquisicao = $morador->getData_aqui();
-    $telefone = $morador->getTelefone();
-    $cpf = $morador->getCpf();
-    $action = "editar&id=" . $morador->getId();
-}
+    if(isset($_REQUEST['editar'])){
+        $morador = MoradorDAO::buscarPorId($_REQUEST['id']);
+        $nome = $morador->getNome();
+        $bloco = $morador->getBloco();
+        $apartamento = $morador->getApartamento();
+        $email = $morador->getEmail();
+        $datadenascimento = $morador->getData_nasc();
+        $datadeaquisicao = $morador->getData_aqui();
+        $telefone = $morador->getTelefone();
+        $cpf = $morador->getCpf();
+        $action = "editar&id=".$morador->getId();
+    }
 ?>
 
 <html lang="pt-br">
@@ -284,11 +284,11 @@ if (isset($_REQUEST['editar'])) {
 
         <?php
 
-        $lista = moradorDAO::buscar();
+            $lista = moradorDAO::buscar();
 
         ?>
-        <div class="container">
-            <table class="table table-dark rounded-table" style="border-color: black;">
+        <div class="container border">
+            <table class="table table-dark table-striped">
                 <thead>
                     <tr>
                         <th>Nome</th>
@@ -303,29 +303,30 @@ if (isset($_REQUEST['editar'])) {
                 </thead>
                 <tbody>
                     <?php
-                    foreach ($lista as $morador) {
-                        echo '<tr>';
-                        echo '<td>' . $morador->getNome() . '</td>';
-                        echo '<td>' . $morador->getBloco() . '</td>';
-                        echo '<td>' . $morador->getApartamento() . '</td>';
-                        echo '<td>' . $morador->getEmail() . '</td>';
-                        echo '<td>' . $morador->getData_nasc() . '</td>';
-                        echo '<td>' . $morador->getData_aqui() . '</td>';
-                        echo '<td>' . $morador->getTelefone() . '</td>';
-                        echo '<td>' . $morador->getCpf() . '</td>';
-                        echo '<td><a href="cadastroMoradores.php?editar&id=' . $morador->getId() . '">
+                        foreach($lista as $morador){
+                            echo '<tr>';
+                            echo '<td>'.$morador->getNome().'</td>';
+                            echo '<td>'.$morador->getBloco().'</td>';
+                            echo '<td>'.$morador->getApartamento().'</td>';
+                            echo '<td>'.$morador->getEmail().'</td>';
+                            echo '<td>'.$morador->getData_nasc().'</td>';
+                            echo '<td>'.$morador->getData_aqui().'</td>';
+                            echo '<td>'.$morador->getTelefone().'</td>';
+                            echo '<td>'.$morador->getCpf().'</td>';
+                            echo '<td><a href="cadastroMoradores.php?editar&id='.$morador->getId().'">
                             <button class="btn btn-warning" > Editar </button></a></td>';
-                        echo '<td><a href="../Controller/moradorController.php?excluir&id=' . $morador->getId() . '">
+                            echo '<td><a href="../Controller/moradorController.php?excluir&id='.$morador->getId().'">
                             <button class="btn btn-danger"> Excluir </button></a></td>';
-                        echo '</tr>';
-                    }
+                            echo '</tr>';
+                        }
                     ?>
                 </tbody>
-            </table><br /><br />
+            </table><br/><br/>
         </div>
 
-    </main>
+        </main>
 
-</body>
+    </body>
 
 </html>
+
