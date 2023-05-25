@@ -4,14 +4,29 @@ include_once '../DAO/moradorDAO.php';
 
     if(isset($_REQUEST['inserir'])){   
         
-        $nome = $_POST['nome'];
-        $bloco = $_POST['bloco'];
+        $nome = trim($_POST['nome']);
+        $bloco = trim($_POST['bloco']);
         $apartamento = $_POST['apartamento'];
-        $email = $_POST['email'];
+        $email = trim($_POST['email']);
         $datadenasc = $_POST['datadenascimento'];
         $datadeaqui = $_POST['datadeaquisicao'];
         $telefone = $_POST['telefone'];
         $cpf = $_POST['cpf'];
+        $cpf = preg_replace('/[^0-9]/', '', $cpf);
+
+        if (empty($nome) || empty($bloco) || empty($apartamento) || empty($email) || empty($datadeaqui) || empty($datadenasc) || empty($cpf)) {
+            $error_message = "Por favor, preencha todos os campos obrigatórios";
+            header("Location: ../View/cadastroMoradores.php?error_message=" . urlencode($error_message));
+            exit;
+        }
+        
+
+        if (strlen($cpf) !== 11) {
+            $error_message = "CPF inválido. Certifique-se de inserir os 11 dígitos.";
+            header("Location: ../View/cadastroMoradores.php?error_message=" . urlencode($error_message));
+            exit;
+        }
+
 
         $morador = new Morador($nome, $bloco, $apartamento, $email, $datadenasc, $datadeaqui, $telefone, $cpf);
 

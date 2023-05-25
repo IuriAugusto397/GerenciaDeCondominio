@@ -207,6 +207,13 @@
 
 <body>
 
+        <?php
+            if (isset($_GET['error_message'])) {
+                $error_message = $_GET['error_message'];
+                echo htmlspecialchars($error_message);
+            }
+        ?>
+
     <main>
 
         <div class="box">
@@ -220,37 +227,37 @@
                     <div class='label-float'>
                         <label for=usuario>Nome Completo: <br></label>
                         <input type='text' value="<?php echo $nome ?>" name='nome' id='txtNome'
-                            placeholder="Nome/sobrenome">
+                            placeholder="Nome/sobrenome" required>
                     </div>
 
                     <div class='label-float'>
                         <label for=usuario>Bloco: <br></label>
                         <input type='text' value="<?php echo $bloco ?>" name='bloco' id='txtBloco'
-                            placeholder="Número do bloco/prédio">
+                            placeholder="Número do bloco/prédio" required>
                     </div>
 
                     <div class='label-float'>
                         <label for=usuario>Apartamento: <br></label>
                         <input type='text' value="<?php echo $apartamento ?>" name='apartamento' id='txtApartamento'
-                            placeholder="Número do apartamento">
+                            placeholder="Número do apartamento" required>
                     </div>
 
                     <div class='label-float'>
                         <label for=usuario>Email: <br></label>
                         <input type='email' value="<?php echo $email ?>" name='email' id='txtEmail'
-                            placeholder="exemplo@email.com">
+                            placeholder="exemplo@email.com" required>
                     </div>
 
                     <div class='label-float'>
                         <label for=usuario>Data de Nascimento: <br></label>
                         <input type='date' value="<?php echo $datadenascimento ?>" name='datadenascimento'
-                            id='txtDataNascimento' placeholder="dia/mês/ano de nascimento">
+                            id='txtDataNascimento' placeholder="dia/mês/ano de nascimento" required>
                     </div>
 
                     <div class='label-float'>
                         <label for=usuario>Data de Aquisição do Apartamento: <br></label>
                         <input type='date' value="<?php echo $datadeaquisicao ?>" name='datadeaquisicao'
-                            id='txtDataAquisicao' placeholder="dia/mês/ano de aquisição do apartamento">
+                            id='txtDataAquisicao' placeholder="dia/mês/ano de aquisição do apartamento" required>
                     </div>
 
                     <div class='label-float'>
@@ -262,7 +269,7 @@
                     <div class='label-float'>
                         <label for=usuario>CPF: <br></label>
                         <input type='number' value="<?php echo $cpf ?>" name='cpf' id='txtCpf'
-                            placeholder="Número do Cadastro de pessoa física">
+                            placeholder="Número do Cadastro de pessoa física" required>
                     </div><br><br>
 
 
