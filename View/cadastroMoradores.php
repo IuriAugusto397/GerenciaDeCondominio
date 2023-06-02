@@ -216,37 +216,37 @@
                         <div class='label-float'>
                             <label for="nome">Nome Completo: <br></label>
                             <input type="text" value="<?php echo $nome ?>" name="nome"
-                            id="nome" placeholder="Nome e sobrenome" required>
+                            id="nome" placeholder="Nome e sobrenome">
                         </div>
 
                         <div class='label-float'>
                             <label for="bloco">Bloco: <br></label>
                             <input type="text" value="<?php echo $bloco ?>" name="bloco"
-                            id="bloco" placeholder="Número do bloco/prédio" required>
+                            id="bloco" placeholder="Número do bloco/prédio">
                         </div>
 
                         <div class='label-float'>
                             <label for="apartamento">Apartamento: <br></label>
                             <input type="text" value="<?php echo $apartamento ?>" name="apartamento"
-                            id="apartamento" placeholder="Número do apartamento" required>
+                            id="apartamento" placeholder="Número do apartamento">
                         </div>
 
                         <div class='label-float'>
                             <label for="email">Email: <br></label>
                             <input type="email" value="<?php echo $email ?>" name="email"
-                            id="email" placeholder="exemplo@email.com" required>
+                            id="email" placeholder="exemplo@email.com">
                         </div>
 
                         <div class='label-float'>
                             <label for="datadenascimento">Data de Nascimento: <br></label>
                             <input type="date" value="<?php echo $datadenascimento ?>" name="datadenascimento"
-                            id="dataNascimento" placeholder="dia/mês/ano de nascimento" required>
+                            id="dataNascimento" placeholder="dia/mês/ano de nascimento">
                         </div>
 
                         <div class='label-float'>
                             <label for="datadeaquisicao">Data de Aquisição do Apartamento: <br></label>
                             <input type="date" value="<?php echo $datadeaquisicao ?>" name="datadeaquisicao"
-                            id="dataAquisicao" placeholder="dia/mês/ano de aquisição do apartamento" required>
+                            id="dataAquisicao" placeholder="dia/mês/ano de aquisição do apartamento">
                         </div>
 
                         <div class='label-float'>
@@ -258,7 +258,7 @@
                         <div class='label-float'>
                             <label for="cpf">CPF: <br></label>
                             <input type="number" value="<?php echo $cpf ?>" name="cpf"
-                            id="cpf" placeholder="Número do Cadastro de pessoa física" required>
+                            id="cpf" placeholder="Número do Cadastro de pessoa física">
                         </div><br><br>
 
                         <div class="justify-center">
