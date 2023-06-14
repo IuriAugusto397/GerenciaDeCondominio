@@ -8,7 +8,6 @@
     if($conn->connect_error){
         die("Conexão falhou".$conn->connect_error);
     }
-    echo "conectado";
     
     if(isset($_POST['submit'])){
         

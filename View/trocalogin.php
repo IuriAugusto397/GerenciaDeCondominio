@@ -1,3 +1,29 @@
+<?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $db_name = "condominio";
+    $conn = new mysqli($servername, $username, $password, $db_name);
+
+    if($conn->connect_error){
+        die("Conexão falhou".$conn->connect_error);
+    }
+    
+    if(isset($_POST['submit'])){
+        
+        $novologin = $_POST['novologin'];
+        $novasenha = $_POST['novasenha'];
+
+        $sql = "update sindico set login = '$novologin',senha = '$novasenha' where 1";
+        mysqli_query($conn, $sql);    
+            echo '<script>
+                window.location.href = "../View/telademenudefuncionalidades.php";
+                alert("Login e senha alterados com sucesso!")
+            </script>';
+        
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -111,7 +137,7 @@
                 
                     <h1>Alterar login e senha</h1>
 
-                    <form>
+                    <form action="trocalogin.php" method="POST">
 
                         <div class='label-float'>
                             <label for="novologin">Novo login: <br /><br /></label>
@@ -120,11 +146,11 @@
 
                         <div class='label-float'>
                             <label for="novasenha">Nova senha: <br /><br /></label>
-                            <input type="password" nome="novasenha" id="novasenha" placeholder="Insira a nova senha">
+                            <input type="password" name="novasenha" id="novasenha" placeholder="Insira a nova senha">
                         </div><br><br><br><br>
 
                         <div class="justify-center">
-                            <button class="formbutton formbutton-right" type="submit">Salvar mudanças</button>
+                            <button class="formbutton formbutton-right" type="submit" name="submit">Salvar mudanças</button>
                         </div>
 
                     </form>

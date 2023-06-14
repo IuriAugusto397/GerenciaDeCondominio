@@ -1,3 +1,42 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$db_name = "condominio";
+$connection = new mysqli($servername, $username, $password, $db_name);
+
+if($connection->connect_error){
+    die("Conexão falhou".$connection->connect_error);
+}
+
+if (isset($_POST['submit'])) {
+    // Consulta SQL para buscar os emails cadastrados
+    $query = "SELECT email FROM moradores";
+    $result = mysqli_query($connection, $query);
+
+    if (!$result) {
+        echo "Erro na consulta ao banco de dados: " . mysqli_error($connection);
+        exit;
+    }
+
+    // Loop para percorrer os resultados da consulta
+    while ($row = mysqli_fetch_assoc($result)) {
+        $emailpara = $row['email'];
+        $to = $emailpara;
+        $subject = $_POST['assunto'];
+        $message = $_POST['message'];
+        $header = "From: testephpxampp@gmail.com";
+
+        // Enviar o email para cada destinatário
+        if (mail($to, $subject, $message, $header)) {
+            echo "Email enviado para " . $emailpara . "<br>";
+        } else {
+            echo "Falha no envio para " . $emailpara . "<br>";
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
